@@ -66,7 +66,8 @@ const CreateLinkForm = () => {
         />
       </CardContent>
       <CardActions>
-        <Button size="medium">Create Link</Button>
+        <Button size="medium" type="submit"
+        >Create Link</Button>
       </CardActions>
       </form>
     </Card>

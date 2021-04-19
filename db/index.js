@@ -48,21 +48,21 @@ async function getAllLinks () {
     JOIN link_tags ON tags.id = link_tags."tagId";
   `);
 
-  links.map(link => {
+  links.map((link) => {
+    let linkTags = [];
 
-    let linktags = [];
+    for (let i = 0; i < tags.length; i++) {
 
-    tags.forEach((tag) => {
-      if (tag.linkId === link.linkId) {
-        linktags.push(tag.name)
+      if (link.linkId === tags[i].linkId) {
+        linkTags.push(tags[i].name);
       }
-    })
 
-    link.tags = linktags;
-  })
+      link.tags = linkTags;
+    }
+  });
 
   return links;
-  
+
   } catch (error) {
     throw error;
   }

@@ -41,7 +41,7 @@ const LinkCard = (props) => {
           <Typography variant="body2" color="textSecondary" component="p">
             {link.comment}
           </Typography>
-            {/* {link.tags.map((tag, index) => {
+            {link.tags.map((tag, index) => {
               return (
                 <div key={index}>
                   <Typography variant="body2" color="textSecondary" component="p">
@@ -49,7 +49,7 @@ const LinkCard = (props) => {
                   </Typography>
                 </div>
                 )
-            })} */}
+            })}
         </CardContent>
       </CardActionArea>
       <CardActions>

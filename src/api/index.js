@@ -38,6 +38,7 @@ export async function createLink(linkUrl, linkComment, tagList = []) {
   try {
     const { data } = await axios.post("/api/links", {
       link: linkUrl,
+      clickCount: 0,
       comment: linkComment,
       tags: tagList,
     });
