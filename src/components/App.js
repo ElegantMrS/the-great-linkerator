@@ -1,26 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
-import { 
-  BrowserRouter as Router, 
-  Route, 
-  Switch } from "react-router-dom";
-
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { getAllLinks } from '../api';
 import CreateLinkForm from './CreateLinkForm';
 import Links from './Links';
 
-import {
-  getSomething
-} from '../api';
 
 const App = () => {
 
   const [links, setLinks] = useState([]);
 
+  useEffect(() => {
+    try {
+      Promise.all([getAllLinks()]).then(([data]) => {
+        console.log(data);
+        setLinks(data);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
   return (
     <div className="App">
       <Router>
       <Route exact path="/">
-      <CreateLinkForm/>
+        <CreateLinkForm/>
       </Route>
       <Route exact path="/links">
         <Links

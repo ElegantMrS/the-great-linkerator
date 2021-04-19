@@ -2,13 +2,13 @@
 const {
   client,
   createLink,
-  getAllLinks,
-  getLinkById,
-  createTags,
-  getAllTags,
-  createLinkTag,
-  addTagsToLink,
-  getLinksByTagName
+  // getAllLinks,
+  // getLinkById,
+  // createTags,
+  // getAllTags,
+  // createLinkTag,
+  // addTagsToLink,
+  // getLinksByTagName
   // other db methods 
 } = require('./index');
 
